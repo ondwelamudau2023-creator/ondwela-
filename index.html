@@ -3,64 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ondwela Mudau's Personal Page</title>
+    <title>Ondwela Mudau's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Basic CSS for a clean look */
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-color: #007bff; /* Bright Blue */
+            --secondary-color: #333; /* Dark Text */
+            --light-bg: #f8f9fa; /* Very Light Grey */
+            --white: #ffffff;
+            --container-bg: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            padding-top: 60px; /* Space for the fixed header */
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--container-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
             text-align: center;
         }
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        /* --- HEADER (New Feature: Navigation) --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            z-index: 1000;
         }
+
+        .header h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        /* --- TYPOGRAPHY --- */
         h1 {
-            color: #007bff;
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
         }
-        p {
-            line-height: 1.6;
-            margin-bottom: 20px;
+
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block;
         }
-        .contact a {
-            color: #007bff;
+
+        /* --- SOCIAL MEDIA (New Feature) --- */
+        .social-links {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        /* Hover effect for power */
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* --- BUTTON/CONTACT STYLES --- */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            color: #6c757d;
+            font-size: 0.85em;
         }
     </style>
 </head>
 <body>
 
+    <header class="header">
+        <h3>Ondwela Mudau | Developer in Training</h3>
+    </header>
+
     <div class="container">
-        <h1>Welcome to Ondwela Mudau's Page</h1>
+        <h1>Welcome to Ondwela's Portfolio</h1>
 
         <p>
-            Hello! I am Ondwela Mudau, and this is my first personal website. 
-            I am currently based in Thohoyandou, Limpopo, South Africa.
+            Hello! I am **Ondwela Mudau**, based in Thohoyandou, Limpopo, South Africa. 
+            This website marks my first step into web development, using Git and GitHub Pages. 
+            I'm focused on learning new skills and building a strong network.
         </p>
 
-        <h2>My Journey So Far</h2>
+        <h2>Connect With Me</h2>
+        <div class="social-links">
+            <a href="mailto:ondwelamudau2014@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" target="_blank" title="LinkedIn Profile (Coming Soon)"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="GitHub Profile (Coming Soon)"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" title="Twitter/X Profile (Coming Soon)"><i class="fa-brands fa-square-x-twitter"></i></a>
+        </div>
+
+        <h2>My Current Learning Path</h2>
         <p>
-            I am excited to be taking my first steps into web development and learning about GitHub. 
-            This website is a placeholder for future projects and content!
+            My journey is just beginning! I am currently mastering the fundamentals of:
+        </p>
+        <ul>
+            <li>**HTML5:** Structuring web content.</li>
+            <li>**CSS3:** Styling and modern design.</li>
+            <li>**Git & GitHub:** Version control and deployment.</li>
+        </ul>
+        <p>
+            I look forward to adding my first projects here soon!
         </p>
 
-        <h2>Get In Touch</h2>
-        <p class="contact">
-            You can reach me by email: <a href="mailto:ondwelamudau2014@gmail.com">ondwelamudau2014@gmail.com</a>
-        </p>
+        <a href="mailto:ondwelamudau2014@gmail.com" class="btn-primary">Start a Collaboration</a>
         
-        <small>
-            Location: Thohoyandou, Limpopo (Postal Code 0950)
-        </small>
+        <div class="footer-note">
+            Built with HTML and CSS on GitHub Pages. | Thohoyandou, Limpopo 0950.
+        </div>
     </div>
 
 </body>
-</html>
+    </html>
+    
