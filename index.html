@@ -3,177 +3,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ondwela Mudau | Future Tech Leader</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Ondwela Mudau | Young Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- GLOBAL & COLOR DEFINITIONS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         :root {
-            --primary-blue: #007bff; /* Accent Color */
-            --secondary-dark: #2c3e50; /* Deep Header Color */
-            --text-color: #34495e; /* Body Text Color */
-            --light-grey: #ecf0f1; /* Section Background */
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
-            background-color: var(--light-grey);
-            color: var(--text-color);
-            text-align: center;
         }
 
-        /* --- HERO SECTION (The Big Visual Impact) --- */
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                              url('https://images.unsplash.com/photo-1628103138830-46eb5e6d6d45?q=80&w=1800&auto=format&fit=crop'); 
-            /* High-impact image of a child learning tech */
-            background-size: cover;
-            background-position: center;
-            height: 50vh; /* 50% of viewport height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2em;
-            font-weight: 300;
-        }
-
-        /* --- CONTENT CONTAINER --- */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--secondary-dark);
-            margin-top: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary-blue);
-            display: inline-block;
-        }
-
-        /* --- SKILLS IMAGE (Second Visual Element) --- */
-        .skill-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        /* --- CALL TO ACTION & BUTTONS --- */
-        .btn-cta {
-            display: inline-block;
-            background-color: var(--primary-blue);
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 12px 25px;
-            margin: 25px 10px;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        /* Goals Section */
+        .goals {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .goals-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .goals-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .goals-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .goals-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--accent), #c0392b);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid white;
         }
 
-        .btn-cta:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+        .btn:hover {
+            background: transparent;
+            color: white;
         }
 
-        /* --- SOCIAL LINKS --- */
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
         .social-links a {
-            font-size: 1.8em;
-            color: var(--secondary-dark);
-            margin: 0 15px;
-            transition: color 0.3s;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--primary-blue);
+            color: var(--primary);
         }
 
-        .location-footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
-            font-size: 0.9em;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Ondwela Mudau: Building the Future from Limpopo</h1>
-            <p>Developer-in-Training | Creating powerful web solutions.</p>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="https://images.unsplash.com/photo-1516627145497-ae69578cfc06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ondwela Mudau">
+                </div>
+                <h1>Ondwela Mudau</h1>
+                <p class="tagline">Building the Future from Limpopo</p>
+                <p>Developer-in-Training | Creating powerful web solutions</p>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Thohoyandou, Limpopo, South Africa (0950)</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <div class="container">
-        
-        <h2>About My Journey</h2>
-
-        <p>
-            Hello! I am Ondwela Mudau, proudly based in **Thohoyandou, Limpopo**. 
-            This portfolio marks my official entry into the world of web development. I'm driven 
-            by a passion for learning and a commitment to creating high-quality, impactful digital projects.
-        </p>
-
-        <img 
-            src="https://images.unsplash.com/photo-1542435503-92144b6b6e4e?q=80&w=700&auto=format&fit=crop" 
-            alt="Young person learning to code" 
-            class="skill-image"
-        >
-
-        <h2>Skills and Goals</h2>
-        <p>
-            I am currently focused on mastering the foundational elements that power every successful website:
-        </p>
-        <ul>
-            <li>**HTML5 Structure:** Building robust, clean frameworks.</li>
-            <li>**CSS3 Design:** Creating beautiful, responsive layouts.</li>
-            <li>**Version Control:** Using Git and GitHub to manage projects professionally.</li>
-        </ul>
-
-        <a href="mailto:ondwelamudau2014@gmail.com" class="btn-cta">
-            <i class="fa-solid fa-handshake"></i> Collaborate Now
-        </a>
-
-        <h2>Connect With Me</h2>
-        <p>
-            Let's link up! Sharing ideas and knowledge with friends and fellow developers is key to growth.
-        </p>
-
-        <div class="social-links">
-            <a href="mailto:ondwelamudau2014@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" target="_blank" title="My GitHub Profile"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank" title="Connect on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" target="_blank" title="Follow on X/Twitter"><i class="fa-brands fa-square-x-twitter"></i></a>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About My Journey</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I am Ondwela Mudau, proudly based in <strong>Thohoyandou, Limpopo</strong>. This portfolio marks my official entry into the world of web development. I'm driven by a passion for learning and a commitment to creating high-quality, impactful digital projects.</p>
+                    <p>As a young person learning to code, I believe that technology has the power to transform communities and create opportunities. My journey started with curiosity about how websites work, and it has grown into a passion for building digital solutions.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Young person coding">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="location-footer">
-            Location: Thohoyandou, Limpopo, South Africa (0950) | This site is hosted on GitHub Pages.
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills and Goals</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">I am currently focused on mastering the foundational elements that power every successful website:</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5 Structure</h3>
+                    <p>Building robust, clean frameworks that form the foundation of every great website.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3 Design</h3>
+                    <p>Creating beautiful, responsive layouts that work perfectly on all devices.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Version Control</h3>
+                    <p>Using Git and GitHub to manage projects professionally and collaborate with others.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Coding Project">
+                    </div>
+                    <div class="project-content">
+                        <h3>First Portfolio Website</h3>
+                        <p>My very first website built with HTML and CSS, showcasing my journey into web development.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Web Design Project">
+                    </div>
+                    <div class="project-content">
+                        <h3>Responsive Layout Design</h3>
+                        <p>A mobile-first website design that adapts to different screen sizes and devices.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="GitHub Project">
+                    </div>
+                    <div class="project-content">
+                        <h3>GitHub Repository</h3>
+                        <p>My collection of coding projects and experiments, all version controlled with Git.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Future Goals</h2>
+            <div class="goals-content">
+                <p>As I continue my coding journey, I'm excited to explore new technologies and expand my skills. Here are some of my future goals:</p>
+                <ul class="goals-list">
+                    <li>Learn JavaScript to add interactivity to my websites</li>
+                    <li>Build a web application that solves a real problem in my community</li>
+                    <li>Master responsive design principles</li>
+                    <li>Contribute to open source projects</li>
+                    <li>Learn about web accessibility to make websites usable for everyone</li>
+                    <li>Explore backend development with Node.js</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>GO COLLABORATE NOW</h2>
+            <p>Let's link up! Sharing ideas and knowledge with friends and fellow developers is key to growth.</p>
+            <a href="mailto:ondwela@example.com" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>Location: Thohoyandou, Limpopo, South Africa (0950)</p>
+                    <p>This site is hosted on GitHub Pages</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-</html>
-
-    
+    </html>
