@@ -1,161 +1,179 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ondwela Mudau's Portfolio</title>
+    <title>Ondwela Mudau | Future Tech Leader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- GLOBAL STYLES --- */
+        /* --- GLOBAL & COLOR DEFINITIONS --- */
         :root {
-            --primary-color: #007bff; /* Bright Blue */
-            --secondary-color: #333; /* Dark Text */
-            --light-bg: #f8f9fa; /* Very Light Grey */
-            --white: #ffffff;
-            --container-bg: #ffffff;
+            --primary-blue: #007bff; /* Accent Color */
+            --secondary-dark: #2c3e50; /* Deep Header Color */
+            --text-color: #34495e; /* Body Text Color */
+            --light-grey: #ecf0f1; /* Section Background */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding-top: 60px; /* Space for the fixed header */
-            background-color: var(--light-bg);
-            color: var(--secondary-color);
-            line-height: 1.7;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: var(--container-bg);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+            line-height: 1.6;
+            background-color: var(--light-grey);
+            color: var(--text-color);
             text-align: center;
         }
 
-        /* --- HEADER (New Feature: Navigation) --- */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            z-index: 1000;
+        /* --- HERO SECTION (The Big Visual Impact) --- */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                              url('https://images.unsplash.com/photo-1628103138830-46eb5e6d6d45?q=80&w=1800&auto=format&fit=crop'); 
+            /* High-impact image of a child learning tech */
+            background-size: cover;
+            background-position: center;
+            height: 50vh; /* 50% of viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 0 20px;
         }
 
-        .header h3 {
-            margin: 0;
-            color: var(--primary-color);
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
             font-size: 1.2em;
+            font-weight: 300;
         }
 
-        /* --- TYPOGRAPHY --- */
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: var(--secondary-color);
+            color: var(--secondary-dark);
             margin-top: 30px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
             display: inline-block;
         }
 
-        /* --- SOCIAL MEDIA (New Feature) --- */
-        .social-links {
-            margin-top: 20px;
-            margin-bottom: 30px;
+        /* --- SKILLS IMAGE (Second Visual Element) --- */
+        .skill-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        .social-links a {
-            font-size: 2em;
-            color: var(--secondary-color);
-            margin: 0 10px;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        /* --- CALL TO ACTION & BUTTONS --- */
+        .btn-cta {
             display: inline-block;
-        }
-
-        /* Hover effect for power */
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
-        }
-
-        /* --- BUTTON/CONTACT STYLES --- */
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            margin-top: 20px;
-            border-radius: 5px;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 25px;
+            margin: 25px 10px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
         }
 
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+        .btn-cta:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
-        
-        .footer-note {
+
+        /* --- SOCIAL LINKS --- */
+        .social-links a {
+            font-size: 1.8em;
+            color: var(--secondary-dark);
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .location-footer {
             margin-top: 40px;
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px solid #eee;
-            color: #6c757d;
-            font-size: 0.85em;
+            color: #7f8c8d;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <h3>Ondwela Mudau | Developer in Training</h3>
-    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Ondwela Mudau: Building the Future from Limpopo</h1>
+            <p>Developer-in-Training | Creating powerful web solutions.</p>
+        </div>
+    </div>
 
     <div class="container">
-        <h1>Welcome to Ondwela's Portfolio</h1>
+        
+        <h2>About My Journey</h2>
 
         <p>
-            Hello! I am **Ondwela Mudau**, based in Thohoyandou, Limpopo, South Africa. 
-            This website marks my first step into web development, using Git and GitHub Pages. 
-            I'm focused on learning new skills and building a strong network.
+            Hello! I am Ondwela Mudau, proudly based in **Thohoyandou, Limpopo**. 
+            This portfolio marks my official entry into the world of web development. I'm driven 
+            by a passion for learning and a commitment to creating high-quality, impactful digital projects.
         </p>
 
-        <h2>Connect With Me</h2>
-        <div class="social-links">
-            <a href="mailto:ondwelamudau2014@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" target="_blank" title="LinkedIn Profile (Coming Soon)"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" target="_blank" title="GitHub Profile (Coming Soon)"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank" title="Twitter/X Profile (Coming Soon)"><i class="fa-brands fa-square-x-twitter"></i></a>
-        </div>
+        <img 
+            src="https://images.unsplash.com/photo-1542435503-92144b6b6e4e?q=80&w=700&auto=format&fit=crop" 
+            alt="Young person learning to code" 
+            class="skill-image"
+        >
 
-        <h2>My Current Learning Path</h2>
+        <h2>Skills and Goals</h2>
         <p>
-            My journey is just beginning! I am currently mastering the fundamentals of:
+            I am currently focused on mastering the foundational elements that power every successful website:
         </p>
         <ul>
-            <li>**HTML5:** Structuring web content.</li>
-            <li>**CSS3:** Styling and modern design.</li>
-            <li>**Git & GitHub:** Version control and deployment.</li>
+            <li>**HTML5 Structure:** Building robust, clean frameworks.</li>
+            <li>**CSS3 Design:** Creating beautiful, responsive layouts.</li>
+            <li>**Version Control:** Using Git and GitHub to manage projects professionally.</li>
         </ul>
+
+        <a href="mailto:ondwelamudau2014@gmail.com" class="btn-cta">
+            <i class="fa-solid fa-handshake"></i> Collaborate Now
+        </a>
+
+        <h2>Connect With Me</h2>
         <p>
-            I look forward to adding my first projects here soon!
+            Let's link up! Sharing ideas and knowledge with friends and fellow developers is key to growth.
         </p>
 
-        <a href="mailto:ondwelamudau2014@gmail.com" class="btn-primary">Start a Collaboration</a>
-        
-        <div class="footer-note">
-            Built with HTML and CSS on GitHub Pages. | Thohoyandou, Limpopo 0950.
+        <div class="social-links">
+            <a href="mailto:ondwelamudau2014@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" target="_blank" title="My GitHub Profile"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" title="Connect on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank" title="Follow on X/Twitter"><i class="fa-brands fa-square-x-twitter"></i></a>
+        </div>
+
+        <div class="location-footer">
+            Location: Thohoyandou, Limpopo, South Africa (0950) | This site is hosted on GitHub Pages.
         </div>
     </div>
 
 </body>
-                </html>
+</html>
+
     
